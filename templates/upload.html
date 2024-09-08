@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eye Image Upload</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="/upload/{{ patient_id }}" method="post" enctype="multipart/form-data">
+            <input type="file" name="left_eye" required>
+            <input type="file" name="right_eye" required>
+            <select name="disease_choice" onchange="checkDisease(this.value)">
+                <option value="Diabetes">Diabetes</option>
+                <option value="Cancer">Cancer</option>
+            </select>
+            <select name="gender" id="gender" style="display:none;">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
